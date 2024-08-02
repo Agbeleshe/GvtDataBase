@@ -1,0 +1,146 @@
+[
+  {
+    "version": "1.0",
+    "image": {
+      "name": "/home/videosdownloader/public_html/image/public/uploadt/WhatsApp_Image_2024-08-02_at_05.33.16_6053b12e-removebg-preview.png",
+      "baseName": "WhatsApp_Image_2024-08-02_at_05.33.16_6053b12e-removebg-preview.png",
+      "format": "PNG",
+      "formatDescription": "PNG",
+      "mimeType": "image/png",
+      "class": "DirectClass",
+      "geometry": {
+        "width": 500,
+        "height": 500,
+        "x": 0,
+        "y": 0
+      },
+      "units": "Undefined",
+      "type": "TrueColorAlpha",
+      "baseType": "Undefined",
+      "endianness": "Undefined",
+      "colorspace": "sRGB",
+      "depth": 8,
+      "baseDepth": 8,
+      "channelDepth": {
+        "alpha": 8,
+        "red": 8,
+        "green": 8,
+        "blue": 8
+      },
+      "pixels": 1000000,
+      "imageStatistics": {
+        "Overall": {
+          "min": 0,
+          "max": 255,
+          "mean": 38.5814,
+          "median": 0,
+          "standardDeviation": 18354.4,
+          "kurtosis": 2.27625,
+          "skewness": 1.92308,
+          "entropy": 0.310439
+        }
+      },
+      "channelStatistics": {
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "mean": 66.3306,
+          "median": 0,
+          "standardDeviation": 28391,
+          "kurtosis": -0.784989,
+          "skewness": 1.09099,
+          "entropy": 0.15685
+        },
+        "red": {
+          "min": 0,
+          "max": 255,
+          "mean": 24.12,
+          "median": 0,
+          "standardDeviation": 14013.5,
+          "kurtosis": 6.54454,
+          "skewness": 2.65508,
+          "entropy": 0.366347
+        },
+        "green": {
+          "min": 0,
+          "max": 255,
+          "mean": 39.4933,
+          "median": 0,
+          "standardDeviation": 17773.2,
+          "kurtosis": 0.696876,
+          "skewness": 1.45339,
+          "entropy": 0.363213
+        },
+        "blue": {
+          "min": 0,
+          "max": 255,
+          "mean": 24.3818,
+          "median": 0,
+          "standardDeviation": 13239.8,
+          "kurtosis": 6.01524,
+          "skewness": 2.52296,
+          "entropy": 0.355347
+        }
+      },
+      "alpha": "#00000000",
+      "renderingIntent": "Perceptual",
+      "gamma": 0.45455,
+      "chromaticity": {
+        "redPrimary": {
+          "x": 0.64,
+          "y": 0.33
+        },
+        "greenPrimary": {
+          "x": 0.3,
+          "y": 0.6
+        },
+        "bluePrimary": {
+          "x": 0.15,
+          "y": 0.06
+        },
+        "whitePrimary": {
+          "x": 0.3127,
+          "y": 0.329
+        }
+      },
+      "matteColor": "#BDBDBD",
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "#DFDFDF",
+      "transparentColor": "#00000000",
+      "interlace": "None",
+      "intensity": "Undefined",
+      "compose": "Over",
+      "pageGeometry": {
+        "width": 500,
+        "height": 500,
+        "x": 0,
+        "y": 0
+      },
+      "dispose": "Undefined",
+      "iterations": 0,
+      "compression": "Zip",
+      "orientation": "Undefined",
+      "properties": {
+        "date:create": "2024-08-02T05:00:34+00:00",
+        "date:modify": "2024-08-02T05:00:34+00:00",
+        "png:cHRM": "chunk was found (see Chromaticity, above)",
+        "png:gAMA": "gamma=0.45455 (See Gamma, above)",
+        "png:IHDR.bit-depth-orig": "8",
+        "png:IHDR.bit_depth": "8",
+        "png:IHDR.color-type-orig": "6",
+        "png:IHDR.color_type": "6 (RGBA)",
+        "png:IHDR.interlace_method": "0 (Not interlaced)",
+        "png:IHDR.width,height": "500, 500",
+        "png:sRGB": "intent=0 (Perceptual Intent)",
+        "signature": "986f5d2828174335ee703d37b1fa75abf11c73dde3d90fbe32c99fc14a198b51"
+      },
+      "tainted": false,
+      "filesize": "184967B",
+      "numberPixels": "250000",
+      "pixelsPerSecond": "9.16513MB",
+      "userTime": "0.020u",
+      "elapsedTime": "0:01.027",
+      "version": "ImageMagick 7.0.10-58 Q16 x86_64 2021-01-14 https://imagemagick.org"
+    }
+  }
+]

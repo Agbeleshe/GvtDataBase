@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: New;
+  src: url("/src/assets/fonts/New.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 500vh;
+  background-image: linear-gradient(
+    10deg,
+    rgb(227, 241, 224),
+    rgb(175, 252, 179)
+  );
+  background-repeat: no-repeat;
+  font-family: New;
+}
+
+#up {
+  background-image: linear-gradient(
+    10deg,
+    rgb(175, 252, 179),
+    rgb(255, 255, 255)
+  );
+  font-family: New;
+  height: 800px;
+  width: 800px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: -200px;
+  z-index: -1;
+  animation: up 10s infinite;
+}
+
+#down {
+  background-image: linear-gradient(
+    10deg,
+    rgb(245, 245, 245),
+    rgb(255, 255, 255)
+  );
+  font-family: New;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  position: absolute;
+  filter: blur(80px);
+  z-index: -1;
+  right: 0;
+  animation: down 20s infinite;
+}
+
+#downMobile {
+  background-image: linear-gradient(
+    10deg,
+    rgb(255, 255, 255),
+    rgb(255, 255, 255)
+  );
+  font-family: New;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  filter: blur(100px);
+  display: none;
+  animation: downMobile 20s infinite;
+}
+
+.MainCon {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.btnA {
+  padding: 10px;
+  background-color: rgb(119, 230, 119);
+  border-color: green;
+  border: 1.5px solid green;
+  color: green;
+  border-radius: 100px;
+}
+
+.btnA:hover {
+  padding: 10px;
+  background-color: transparent;
+  border-color: green;
+  border: 1.5px solid green;
+  color: green;
+  border-radius: 100px;
+  transition: all ease-out 0.5s;
+  transform: scale(1.1);
+}
+
+.btnB {
+  padding: 10px;
+  background-color: transparent;
+  color: green;
+  border-radius: 100px;
+}
+
+.btnB:hover {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 100px;
+  transition: all ease-out 0.5s;
+  transform: scale(1.1);
+}
+
+.btnC {
+  padding: 10px;
+  background-color: transparent;
+  border-color: green;
+  border: 1.5px solid green;
+  color: green;
+  border-radius: 100px;
+}
+
+.btnC:hover {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border-color: green;
+  border: 1.5px solid green;
+  border-radius: 100px;
+  transition: all ease-out 0.5s;
+}
+.bg-blur {
+  backdrop-filter: blur(500px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+}
+.bga {
+  background-color: rgb(119, 230, 119);
+}
+
+.bgb {
+  color: green;
+}
+
+/* Keyframes for larger screens */
+@keyframes down {
+  0%,
+  100% {
+    top: -100px;
+  }
+  70% {
+    top: 700px;
+  }
+}
+
+/* Keyframes specific to mobile screens */
+@keyframes downMobile {
+  0%,
+  100% {
+    top: 500px;
+  }
+  70% {
+    top: 700px;
+  }
+}
+
+/* Keyframes specific to mobile screens */
+@keyframes up {
+  0%,
+  100% {
+    top: -150px;
+  }
+  70% {
+    top: -50px;
+  }
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 768px) {
+  #up {
+    height: 700px;
+    width: 500px;
+  }
+
+  #down {
+    display: none;
+  }
+
+  #downMobile {
+    display: block;
+  }
+}
+
+/* new css */
+
+/* Visibility only on small devices */
+.md-hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .md-hidden {
+    display: flex;
+  }
+}
+
+/* Visibility only on desktop devices */
+.sm-hidden {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .sm-hidden {
+    display: none;
+  }
+}
+
+/* Flex on large devices, columns on small devices */
+.sm-cols {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .sm-cols {
+    display: block;
+  }
+}
+
+/* Columns on large devices, flex on small devices */
+.sm-row {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .sm-row {
+    display: flex;
+  }
+}
+
+.rotateXInfinite {
+  animation: rotateX 5s linear infinite;
+}
+
+@keyframes rotateX {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes rotateY {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.rotateYInfinite {
+  animation: rotateY 20s linear infinite;
+}

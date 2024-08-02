@@ -1,39 +1,22 @@
-import { useDisclosure } from "@mantine/hooks";
-import "./App.css";
-import { Button, Flex, Box, Burger, AppShell, Container } from "@mantine/core";
+import React from "react";
+import { UserAuth } from "./context/AuthContext";
+import { UserRoutes } from "./routes/UserRoutes";
+import { NonUserRoutes } from "./routes/NonUserRoutes";
+import { Container } from "@mantine/core";
 
-function App() {
-  const [opened, { toggle }] = useDisclosure();
+const App: React.FC = () => {
+  const userAuth = UserAuth();
+
+  // Handle case where UserAuth context might be undefined
+  if (!userAuth) {
+    return <div>Loading...</div>; // Or some other fallback UI
+  }
+
+  const { isLoggedOut } = userAuth;
 
   return (
-    <AppShell
-      header={{ height: 60 }}
-      navbar={{
-        width: 300,
-        breakpoint: 'sm',
-        collapsed: { mobile: !opened },
-      }}
-      padding="md"
-    >
-      <AppShell.Header>
-        <Burger
-        color="yellow"
-        p={'15px'}
-        className="icon"
-        
-          opened={opened}
-          onClick={toggle}
-          hiddenFrom="sm"
-          size="lg"
-        />
-        <div>Logo</div>
-      </AppShell.Header>
-
-      <AppShell.Navbar p="md">Navbar</AppShell.Navbar>
-
-      <AppShell.Main>Main</AppShell.Main>
-    </AppShell>
+    <>{isLoggedOut ? <UserRoutes /> : <NonUserRoutes />}</>
   );
-}
+};
 
 export default App;
