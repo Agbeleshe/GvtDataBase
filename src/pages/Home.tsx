@@ -1,5 +1,6 @@
 import Category from "./sub-pages/Category";
-import HomeHero from "./sub-pages/HomeHero";
+import { HomeHero } from "./sub-pages/HomeHero";
+
 
 
 const Home: React.FC = () => {

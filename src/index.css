@@ -10,7 +10,8 @@
 body {
   margin: 0;
   padding: 0;
-  height: 500vh;
+  height: auto;
+
   background-image: linear-gradient(
     10deg,
     rgb(227, 241, 224),
@@ -22,8 +23,8 @@ body {
 
 #up {
   background-image: linear-gradient(
-    10deg,
-    rgb(175, 252, 179),
+    100deg,
+    rgb(121, 240, 127),
     rgb(255, 255, 255)
   );
   font-family: New;
@@ -33,7 +34,7 @@ body {
   position: absolute;
   top: -50px;
   left: -200px;
-  z-index: -1;
+  z-index: -1; 
   animation: up 10s infinite;
 }
 
@@ -265,4 +266,12 @@ body {
 
 .rotateYInfinite {
   animation: rotateY 20s linear infinite;
+}
+
+/* styles.css or your relevant CSS file */
+.Gtext {
+  background: linear-gradient(100deg, rgb(248, 232, 4) 0%, rgb(7, 17, 107) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
 }

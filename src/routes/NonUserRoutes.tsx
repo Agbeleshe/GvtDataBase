@@ -7,12 +7,15 @@ import { ReactNode } from "react";
 import { AboutUs } from "../pages/AboutUs";
 import { NavBar } from "../components/NavBar";
 import ServiceDetails from "../pages/ServiceDetails";
+import { useMediaQuery } from "@mantine/hooks";
 
 interface NonUserRoutesProps {
   children: ReactNode;
 }
 
 export const NonUserRoutes: React.FC<NonUserRoutesProps> = ({ children }) => {
+  const md = useMediaQuery("(max-width: 768px)");
+  
   return (
     <>
       <NavBar>
@@ -25,9 +28,23 @@ export const NonUserRoutes: React.FC<NonUserRoutesProps> = ({ children }) => {
           <Route path="/*" element={<Home />} />
         </Routes>
       </NavBar>
-      <div id="up"></div>
-      <div id="down"></div>
-      <div id="downMobile"></div>
+      <div>
+      <div
+          style={{
+            height: "100vh",
+            width: '100%',
+            overflow: "hidden",
+            position: "fixed",
+            backgroundColor: "trasparent",
+            top: "0px",
+            zIndex: -1
+          }}
+        >
+          <div id="up"></div>
+          {/* <div id="down"></div>
+          <div id="downMobile"></div> */}
+        </div>
+      </div>
       {children}
     </>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { UserAuth } from "./context/AuthContext";
 import { UserRoutes } from "./routes/UserRoutes";
 import { NonUserRoutes } from "./routes/NonUserRoutes";
-import { Container } from "@mantine/core";
+import { Box, Container } from "@mantine/core";
 
 const App: React.FC = () => {
   const userAuth = UserAuth();
@@ -15,7 +15,15 @@ const App: React.FC = () => {
   const { isLoggedOut } = userAuth;
 
   return (
-    <>{isLoggedOut ? <UserRoutes /> : <NonUserRoutes />}</>
+    <Box
+      mx={"auto"}
+      style={{
+        maxWidth: "1280px",
+      
+      }}
+    >
+      {isLoggedOut ? <UserRoutes /> : <NonUserRoutes />}
+    </Box>
   );
 };
 
