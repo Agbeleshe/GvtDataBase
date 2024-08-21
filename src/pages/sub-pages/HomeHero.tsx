@@ -4,13 +4,10 @@ import animationData from "../../assets/fxnzJYBEy5.json";
 import imgCircle from "../../assets/circle.png";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "@mantine/hooks";
-import { Box, Center, Text, getGradient, useMantineTheme } from "@mantine/core";
+import { Box, Center, Text} from "@mantine/core";
 
 export const HomeHero: React.FC = () => {
   const md = useMediaQuery("(max-width: 768px)");
-  const theme = useMantineTheme();
-
-  getGradient({ deg: 100, from: "white", to: "black" }, theme);
 
   return (
     <Box
@@ -108,7 +105,12 @@ export const HomeHero: React.FC = () => {
         }}
       >
         <div>
-          <Lottie animationData={animationData} />
+          <Lottie
+          style={{
+            height: md ?  '350px' : '450px',
+           
+          }}
+           animationData={animationData} />
         </div>
       </Center>
     </Box>

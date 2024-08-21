@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import CreateUser from "../pages/CreateUser";
 import Login from "../pages/Login";
@@ -7,14 +7,14 @@ import { ReactNode } from "react";
 import { AboutUs } from "../pages/AboutUs";
 import { NavBar } from "../components/NavBar";
 import ServiceDetails from "../pages/ServiceDetails";
-import { useMediaQuery } from "@mantine/hooks";
+// import { useMediaQuery } from "@mantine/hooks";
 
 interface NonUserRoutesProps {
   children: ReactNode;
 }
 
 export const NonUserRoutes: React.FC<NonUserRoutesProps> = ({ children }) => {
-  const md = useMediaQuery("(max-width: 768px)");
+  // const md = useMediaQuery("(max-width: 768px)");
   
   return (
     <>

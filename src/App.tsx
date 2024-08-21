@@ -22,7 +22,7 @@ const App: React.FC = () => {
       
       }}
     >
-      {isLoggedOut ? <UserRoutes /> : <NonUserRoutes />}
+      {isLoggedOut ? <UserRoutes /> : <NonUserRoutes children={undefined} />}
     </Box>
   );
 };

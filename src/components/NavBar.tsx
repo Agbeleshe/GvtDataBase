@@ -99,7 +99,7 @@ export const NavBar: React.FC<NavBarProps> = ({ children }) => {
           color: scrolled ? "white" : "black",
         }}
       >
-        <Link to={'/'}>
+        <Link to={"/"}>
           <img
             className="rotateYInfinite"
             style={{
@@ -198,7 +198,7 @@ export const NavBar: React.FC<NavBarProps> = ({ children }) => {
               style={{ borderBottom: "1px solid green" }}
               leftSection={<items.icon size="1.5rem" stroke={1.5} />}
               onClick={() => setActive(items.index)}
-              color="green"
+              color="red"
             />
           ))}
 
