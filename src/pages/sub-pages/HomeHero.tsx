@@ -13,7 +13,7 @@ export const HomeHero: React.FC = () => {
     <Box
       mx={"5%"}
       style={{
-        height: md ? "800px" : "600px",
+        height: md ? "800px" : "550px",
         display: md ? "block" : "flex",
         gap: md ? 50 : 0,
       }}

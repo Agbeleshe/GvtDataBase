@@ -36,23 +36,35 @@ const Category = () => {
     <Box
       p={isLargeScreen ? "5%" : "3%"}
       style={{
-        maxHeight: isLargeScreen ? "1200px" : "600px",
+        maxHeight: isLargeScreen ? "1200px" : "500px",
         backgroundColor: "#006400",
         position: "relative",
-        zIndex: 2
+        zIndex: 2,
       }}
     >
       <Container>
         {/* Title */}
         <Box
+          px={10}
+          mx={"auto"}
+          maw={"550px"}
           style={{
             color: "white",
+
+            position: "relative",
           }}
         >
           <Center
+            p={"10"}
             style={{
+              backgroundColor: "#006400",
+              position: "absolute",
               textAlign: "center",
               display: "grid",
+              top: "-90px",
+              borderTopLeftRadius: "10px",
+              borderTopRightRadius: "10px",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
             }}
           >
             <Text maw={500} size="xl" fw={700}>
@@ -68,19 +80,21 @@ const Category = () => {
         <Box
           style={{
             marginTop: "20px",
-            height: isLargeScreen ? "1200px" : "60vh",
+            height: isLargeScreen ? "1200px" : "70vh",
           }}
         >
-          <Grid >
+    <Center h={'100%'}>
+
+
+          <Grid>
             {data.map((info) => (
               <GridCol
-  
-              style={{
-                justifyContent: 'center',
-                display: 'flex',
-                alignContent: 'center',
-                alignItems: 'center'
-              }}
+                style={{
+                  justifyContent: "center",
+                  display: "flex",
+                  alignContent: "center",
+                  alignItems: "center",
+                }}
                 key={info.id}
                 h={isLargeScreen ? 350 : 400}
                 span={isLargeScreen ? 12 : 4}
@@ -127,6 +141,7 @@ const Category = () => {
               </GridCol>
             ))}
           </Grid>
+          </Center>
         </Box>
       </Container>
     </Box>

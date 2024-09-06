@@ -1,4 +1,4 @@
-import {  Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import CreateUser from "../pages/CreateUser";
 import Login from "../pages/Login";
@@ -15,7 +15,7 @@ interface NonUserRoutesProps {
 
 export const NonUserRoutes: React.FC<NonUserRoutesProps> = ({ children }) => {
   // const md = useMediaQuery("(max-width: 768px)");
-  
+
   return (
     <>
       <NavBar>
@@ -29,15 +29,15 @@ export const NonUserRoutes: React.FC<NonUserRoutesProps> = ({ children }) => {
         </Routes>
       </NavBar>
       <div>
-      <div
+        <div
           style={{
             height: "100vh",
-            width: '100%',
+            width: "100%",
             overflow: "hidden",
             position: "fixed",
             backgroundColor: "trasparent",
             top: "0px",
-            zIndex: -1
+            zIndex: -1,
           }}
         >
           <div id="up"></div>
