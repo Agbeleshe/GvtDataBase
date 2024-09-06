@@ -1,4 +1,4 @@
-import { Box, Center, Stack, Image, Text } from "@mantine/core";
+import { Box, Center, Stack, Text } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import Logo from "../assets/Logoo.svg";
 import { FaXTwitter, FaLinkedin, FaFacebook } from "react-icons/fa6";

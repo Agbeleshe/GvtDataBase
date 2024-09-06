@@ -80,7 +80,7 @@ const Category = () => {
         <Box
           style={{
             marginTop: "20px",
-            height: isLargeScreen ? "1200px" : "70vh",
+            height: isLargeScreen ? "1200px" : "",
           }}
         >
     <Center h={'100%'}>

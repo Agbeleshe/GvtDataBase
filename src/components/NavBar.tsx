@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import { AppShell, Box, Burger, NavLink } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import {
-  IconBackground,
   IconHome2,
   IconInfoSquareRounded,
   IconShieldCheckFilled,
-  IconDeviceMobileMessage,
-  IconLogin2,
-  IconWorldUpload,
-  IconLogout2,
+  IconDeviceMobileMessage
 } from "@tabler/icons-react";
 
 import Logo from "../assets/Logoo.svg";
