@@ -2,7 +2,7 @@ import React from "react";
 import { UserAuth } from "./context/AuthContext";
 import { UserRoutes } from "./routes/UserRoutes";
 import { NonUserRoutes } from "./routes/NonUserRoutes";
-import { Box, Container } from "@mantine/core";
+import { Box } from "@mantine/core";
 
 const App: React.FC = () => {
   const userAuth = UserAuth();
