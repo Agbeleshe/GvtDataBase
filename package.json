@@ -20,7 +20,7 @@
     "@mantine/notifications": "^7.11.2",
     "@mantine/nprogress": "^7.11.2",
     "@tabler/icons-react": "^3.11.0",
-    "dayjs": "^1.11.12",
+    "dayjs": "^1.11.13",
     "embla-carousel-react": "^8.1.7",
     "firebase": "^10.12.4",
     "lottie-react": "^2.4.0",
