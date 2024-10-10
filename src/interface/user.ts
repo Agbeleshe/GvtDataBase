@@ -1,16 +1,16 @@
 export interface newUserType {
-    fullName: string
-    dateOfBirth: DateConstructor,
-    nationality: string,
-    stateOfOrigin: string,
+    fullName: string,
+    dateOfBirth: Date | null,
     localGovt: string,
+    stateOfOrigin: string,
     address: string,
+    gender: string,
     phoneNumber: string,
     email: string,
-    nationalIdentityNumber: number,
+    nationalIdentityNumber: string,
     employmentStatus: string,
     jobTitle: string,
     highestEducationLevel: string,
     password: string,
-    terms: true,
+    terms?: true,
 }
