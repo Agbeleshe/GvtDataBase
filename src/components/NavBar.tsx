@@ -17,7 +17,7 @@ interface NavBarProps {
 
 export const NavBar: React.FC<NavBarProps> = ({ children }) => {
   const [mobileOpen, { toggle: toggleMobile }] = useDisclosure();
-  const [desktopOpen, { toggle: toggleDesktop }] = useDisclosure(true);
+  const [desktopOpen] = useDisclosure(true);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState(0);
   const isLargeScreen = useMediaQuery("(min-width: 1024px)");
@@ -112,6 +112,7 @@ export const NavBar: React.FC<NavBarProps> = ({ children }) => {
           <div style={{ gap: "20px" }} className="sm-hidden">
             {navBarItems.map((items, index) => (
               <NavLink
+                key={index}
                 href={items.to}
                 active={index === active}
                 label={items.label}
@@ -180,7 +181,6 @@ export const NavBar: React.FC<NavBarProps> = ({ children }) => {
             width: "60%",
             position: "absolute",
             right: "0px",
-            // borderTop: "1px solid green",
           }}
         >
           {navBarItems.map((items) => (
@@ -195,6 +195,7 @@ export const NavBar: React.FC<NavBarProps> = ({ children }) => {
               leftSection={<items.icon size="1.5rem" stroke={1.5} />}
               onClick={() => setActive(items.index)}
               color="green"
+              key={items.index}
             />
           ))}
 
