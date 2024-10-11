@@ -7,18 +7,25 @@ import { Link } from 'react-router-dom';
 import { MdDateRange } from 'react-icons/md';
 import { ngStates } from '../staticData/nigerianStates';
 import { localGovernments } from '../staticData/localGovernmnets';
+import { notifications } from "@mantine/notifications"
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, userCollectionRef } from '../firebase/firebase-config';
+import { addDoc } from 'firebase/firestore';
 
 
 export default function Signup(props: PaperProps) {
   const [selectedState, setSelectedState] = useState('');
   const [lgas, setLgas] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false)
+
 
   const form = useForm({
+    name: "reg-form",
     initialValues: {
       fullName: '',
       dateOfBirth: null as Date | null,
       gender: null as string | null,
-      stateOfOrigin: '',
+      stateOfOrigin: 'Abia',
       localGovt: '',
       address: '',
       phoneNumber: '',
@@ -30,14 +37,19 @@ export default function Signup(props: PaperProps) {
       password: '',
       terms: true,
     },
-
+    initialErrors: {
+      nationalIdentityNumber: "Invalid National Identification Number"
+    },
     validate: {
       email: (val) => (/^\S+@\S+$/.test(val) ? null : 'Invalid email'),
       password: (val) => (val.length <= 6 ? 'Password should include at least 6 characters' : null),
+      nationalIdentityNumber: (val) => (val.length !== 11 ? "NIN not valid" : null)
     },
   });
 
-  // Function to handle state selection
+  const values = form.values
+
+
   const handleStateChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const state = event.currentTarget.value as keyof typeof localGovernments
     setSelectedState(state);
@@ -46,6 +58,24 @@ export default function Signup(props: PaperProps) {
     form.setFieldValue('localGovt', '');
   };
 
+  const HandleUserCreation = async () => {
+    form.validate()
+    setLoading(true)
+    await createUserWithEmailAndPassword(auth, values.email, values.password)
+      .then((userCredential) => {
+        const user = userCredential.user
+        addDoc(userCollectionRef, {
+          fullName: values.fullName, address: values.address, dateOfBirth: values.dateOfBirth, gender: values.gender ? values.gender : "", stateOfOrigin: values.stateOfOrigin, localGovt: values.localGovt, phoneNumber: values.phoneNumber, email: values.email, nationalIdentityNumber: values.nationalIdentityNumber, employmentStatus: values.employmentStatus, jobTitle: values.jobTitle, highestEducationLevel: values.highestEducationLevel, uid: user.uid
+        })
+        notifications.show({ title: "Registration successful", message: "Your account has been created successfully, you can now use your credentials to sign in" })
+      }).catch((error) => {
+        if (error instanceof Error) {
+          notifications.show({ title: "Registration failed", message: "An error occured and could not create account, please try again later" })
+        }
+      })
+    console.log(values)
+  }
+
   return (
     <Stack c="white" mt={"50px"} align='center'>
       <Paper w={{ base: "95%", sm: "95%", md: "500px", lg: "500px" }} bg={"#57c64c"} radius="md" p="xl" withBorder {...props}>
@@ -53,7 +83,7 @@ export default function Signup(props: PaperProps) {
           Create new account
         </Text>
 
-        <form onSubmit={form.onSubmit(() => { })}>
+        <form onSubmit={form.onSubmit(() => HandleUserCreation())}>
           <Stack>
             <TextInput
               label="Full Name"
@@ -108,7 +138,7 @@ export default function Signup(props: PaperProps) {
                   value: lga,
                   label: lga,
                 }))}
-                disabled={!selectedState} // Disable LGA selection if no state is selected
+                disabled={!selectedState}
               />
             </Group>
 
@@ -166,7 +196,7 @@ export default function Signup(props: PaperProps) {
             <Link to={"/login"} style={{ color: "white", fontWeight: "bold" }}>
               Already have an account? Login
             </Link>
-            <Button color={primaryColor} type="submit" radius="xl">
+            <Button loading={loading} color={primaryColor} type="submit" radius="xl">
               Create Account
             </Button>
           </Group>
