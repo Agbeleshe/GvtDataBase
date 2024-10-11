@@ -14,7 +14,7 @@ import {
   
   // These are imported from Firestore for CRUD functionalities
   
-  import { db } from "../firebase/fire";
+  import { db } from "../firebase/firebase-config";
   
   // Generate a random ID for easy retrieval of data because FIREBASE provides their ID as well but it is hard to retrieve it
   const generateRandomId = (): string => {
